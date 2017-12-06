@@ -11,6 +11,17 @@
 	Make the Title twice as large as the body text, bold, and give it some nice margin.
 */
 
+body{
+	font-family: "proza libre";
+}
+
+h1 {
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 0 0 1.5rem 0;
+	
+}
+
 /*-------- Main Styles --------*/
 
 /* 
@@ -21,10 +32,57 @@
 	Every container, form, input, and button should have rounded corners.
 */
 
+#main{
+width:100%;
+display: flex;
+justify-content: center;
+}
+
+.formSection {
+	width: 100%;
+	margin-right: 10px;
+	margin-left: 75px ;
+	max-width: 500px;
+	background-color: #E3E6EC;
+	padding: 20px;
+
+	
+}
+
+.results {
+	width: 100%;
+	margin-right: 75px;
+	max-width: 500px;
+	background-color: #C8DBB3;
+	padding: 20px;
+	
+
+}
+
 /*-------- Form Styles --------*/
 
+.container, .form, input, button {
 
+	border-radius: 5px;
+}
+
+.row{
+ display:flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: left;
+ margin-bottom: 10px;
+
+}
+
+.formgroup *{
+	display: inline-block;
+	width: 100%;
+
+}
 /* 
+
+
 
 	Make sure the form itself fills the width of whatever container its in, but no larger than 500px.
 	
