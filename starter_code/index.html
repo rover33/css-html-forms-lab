@@ -100,7 +100,7 @@
 		function makeResults() {
 
 			$( "<section class='container results'><h1>A True Story:</h1>" ).appendTo(main);
-
+           
 			// JS Native:
 			// var results = document.createElement('section');
 			// results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
@@ -111,24 +111,38 @@
 		$("form").on("submit", function(event){
 
 		    // Stop the form from submitting
+		    event.preventDefault();
 
 	    	// Run the 'makeResults' function seen above
+	    	makeResults();
 
-	    	/*
+
+	    	
 			
-				For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
+				// For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section
 
-				"Once upon a time there was a Developer named NAME."
+				// "Once upon a time there was a Developer named NAME."
+                var name = $("input#name").val();
+                $(".container.results").append("Once upon a time there was a Developer named" + " " + name +". ");
+				// "NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
+				var verb = $("#verb-1").val();
+               $(".container.results").append( name + " " + "came to General Assembly to" + " " + verb + " " + "the great mountain of programming knowledge." );
+				// ""MISSION", NAME shouted."
+	           var mission = $("#mission").val();
+               $(".container.results").append( '"' + mission + '"' + ",  " + " " + name + " " + "shouted. ");
+				// "Though SENTIMENT, NAME was able to overcome all obstacles with the power of their NOUN."
+				var sentiment = $('input[name=sentiment]:checked').val();
+				var noun = $("#noun-1").val();
+               $(".container.results").append("though" + sentiment + ", " + name + " " + "was able to overcome all obstacles with the power of their " +  noun +".");
 
-				"NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
 
-				""MISSION", NAME shouted."
-	
-				"Though SENTIMENT, NAME was able to overcome all obstacles with the power of their NOUN."
 
-				"In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
+				// "In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
+				var adj = $('input[name=adjective-2]:checked').map(function () {return this.value;}).get().join(", ");
+				var noun2 = $("#noun-2").val();
+				$(".container.results").append(" " + "In the end, their success can be contributed entirely to their" + " " + adj + " " + noun2 + ".");
 
-	    	*/ 
+	    	
 		});
 	</script>
 
