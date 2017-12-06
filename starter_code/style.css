@@ -113,8 +113,13 @@ padding: 3px;
 }
 
 label{
-	padding-bottom: 10px;
-	padding-top: 10px
+	/* padding-bottom: 10px;
+	padding-top: 10px */
+}
+
+textarea, select, input {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 #name{
